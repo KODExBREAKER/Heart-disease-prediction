@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Heart Check</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="./static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center orange-text">Heart Disease Prediction</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Predict the Probability of Heart Disease
+                    <br>
+                </h5>
+            </div>
+
+            <div class="row">
+                <form action='/predict' method="post" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <label for="Age"><b>Age</b></label>
+                            <br>
+                            <input placeholder="Age in Years" name="Age" id="Age" type="text" class="validate">
+                        </div>
+                        <div class="input-field col s4">
+
+                            <label for="Sex"><b>Sex</b></label>
+                            <br>
+                            <input id="Sex" name="Sex" placeholder="1 = male;0 = female" type="text" class="validate">
+
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="cp"><b>Chest Pain type</b></label>
+                            <br>
+                            <input id="cp" name="Chest Pain type" placeholder="Type 1, 2 or 3" type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="trestbps"><b>Resting blood pressure</b></label>
+                            <br>
+                            <input id="cp" name="Resting blood pressure" placeholder="in mm Hg" type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="chol"><b>Serum cholestoral</b></label>
+                            <br>
+                            <input id="chol" name="cholestoral" placeholder="in mg/dl" type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="fbs"><b>Fasting Blood Sugar > 120</b></label>
+                            <br>
+                            <input id="fbs" name="Fasting Blood Sugar > 120" placeholder="1=true,0=false" type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="restecg"><b>Resting electrocardiographic results</b></label>
+                            <br>
+                            <input id="restecg" name="resting electrocardiographic results" placeholder=" 0 or 1" type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="thalach"><b>maximum heart rate achieved</b></label>
+                            <br>
+                            <input id="thalach" name="maximum heart rate achieved" placeholder=" " type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="exang"><b>exercise induced angina</b></label>
+                            <br>
+                            <input id="exang" name="exercise induced angina" placeholder="1 = yes; 0 = no" type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="oldpeak"><b>ST depression induced by exercise to rest</b></label>
+                            <br>
+                            <input id="oldpeak" name="ST depression induced by exercise to rest" placeholder=" " type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="slope"><b>Slope of the peak exercise ST segment</b></label>
+                            <br>
+                            <input id="slope" name="Slope of the peak exercise ST segment" placeholder=" 0 to 2" type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="ca"><b>number of major vessels colored by flourosopy</b></label>
+                            <br>
+                            <input id="ca" name="Number of major vessels colored by flourosopy" placeholder="0-3" type="text" class="validate">
+
+                        </div>
+                        <div class="input-field col s4">
+                            <label for="thal"><b>Thal</b></label>
+                            <br>
+                            <input id="thal" name="Thal" placeholder=" " type="text" class="validate">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row center">
+
+                        <button type="submit" class="btn-large waves-effect waves-light orange">Predict</button>
+                    </div>
+                </form>
+            </div>
+
+            <br> {{pred}}
+            <style>
+                h1 {
+                    font-size: 40px;
+                }
+            </style>
+            <br>
+
+        </div>
+    </div>
+
+
+    <br><br>
+    </div>
+    </div>>
+
+    <footer class="page-footer orange">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Bio</h5>
+                    <p class="grey-text text-lighten-4">I am a college student working on this project. Any suggestion would help to continue development of this project and is greatly appreciated.</p>
+
+
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src=".js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+</body>
+
+</html>
