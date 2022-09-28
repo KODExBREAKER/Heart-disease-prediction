@@ -1,4 +1,4 @@
-# Loan-prediction
+# Heart Disease Prediction
 
 ### Software and Tool Requirements
 
