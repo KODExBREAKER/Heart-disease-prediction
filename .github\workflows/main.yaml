@@ -47,19 +47,13 @@ jobs:
           # (Optional, default: "")
           # Additional options of docker build command.
           docker_options: "--no-cache"
-          
-          # Automatic deploy
-      #- name: Automatic deploy 
-        #env:
-         # heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-         # heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-        if: github.ref == 'ref/head/main' && job.status=='success'
-        run: |
-           git remote add heroku https://heroku:$heroku_api_key@git.heroku.com/$heroku_app_name.git
-           git push heroku HEAD:master -f
 
           # (Optional, default: "web")
           # Select the process type for which you want the docker container to be uploaded.
           # By default, this argument is set to "web".
           # For more information look at https://devcenter.heroku.com/articles/process-model
-        process_type: web
+          process_type: web
+          
+   
+          
+### ⬆ IMPORTANT PART ⬆ ###
